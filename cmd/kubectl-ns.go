@@ -29,6 +29,8 @@ func main() {
 	flags := pflag.NewFlagSet("kubectl-ns", pflag.ExitOnError)
 	pflag.CommandLine = flags
 
+	println("Testing the kubectl-ns plugin")
+
 	root := cmd.NewCmdNamespace(genericclioptions.IOStreams{In: os.Stdin, Out: os.Stdout, ErrOut: os.Stderr})
 	if err := root.Execute(); err != nil {
 		os.Exit(1)
